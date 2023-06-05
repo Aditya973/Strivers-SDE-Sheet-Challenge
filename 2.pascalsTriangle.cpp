@@ -1,22 +1,22 @@
-long long nCr(int n,int r){
-  long long res = 1;
-  for(int i = 1;i<=r;i++){
-    res *= (n-i+1);
-    res /= i;
+#include <bits/stdc++.h>
+
+vector<long long int> generateRow(int row){
+  vector<long long int> v;
+  long long int res = 1;
+  for(int col = 1;col <= row;col++){
+    v.push_back(res);
+    res *= (row-col);
+    res /= (col);
   }
-  return res;
+  return v;
 }
 
 vector<vector<long long int>> printPascal(int n) 
 {
   // Write your code here.
-  vector<vector<long long>> ans;
+  vector<vector<long long int>> ans;
   for(int i = 1;i<=n;i++){
-    vector<long long> v;
-    for(int j = 1;j<=i;j++){
-      v.push_back(nCr(i-1,j-1));
-    }
-    ans.push_back(v);
+    ans.push_back(generateRow(i));
   }
   return ans;
 }
