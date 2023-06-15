@@ -1,5 +1,15 @@
 {
     "files.associations": {
-        "vector": "cpp"
+        "vector": "cpp",
+        "atomic": "cpp",
+        "*.tcc": "cpp",
+        "bitset": "cpp",
+        "cmath": "cpp",
+        "algorithm": "cpp",
+        "functional": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "regex": "cpp",
+        "variant": "cpp"
     }
 }
