@@ -27,21 +27,17 @@ public:
 Node* removeKthNode(Node* head, int K)
 {
     // Write your code here.
-    int n = 0;
-    Node* temp = head;
-    while(temp != nullptr){
-        n++;
-        temp = temp->next;
+    Node* dummy = new Node();
+    dummy->next = head;
+    Node* fast = dummy;
+    Node* slow = dummy;
+    for(int i = 1;i<=K;i++){
+        fast = fast->next;
     }
-    n = n - K-1;
-    if(n < 0){
-        head = head->next;
-        return head;
+    while(fast->next != nullptr){
+        fast = fast->next;
+        slow = slow->next;
     }
-    temp = head;
-    while(n--){
-        temp = temp->next;
-    }
-    temp->next = temp->next->next;
-    return head;
+    slow -> next = slow->next->next;
+    return dummy->next;
 }
