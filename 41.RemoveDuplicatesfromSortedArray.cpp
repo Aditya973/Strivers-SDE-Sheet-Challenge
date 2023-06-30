@@ -11,4 +11,4 @@ int removeDuplicates(vector<int> &arr, int n) {
 		}
 	}
 	return (i+1);
-}
+} 
